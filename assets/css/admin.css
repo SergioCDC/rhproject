@@ -1,0 +1,271 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #222222;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Container principal */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Título */
+h2 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+/* Campo de Pesquisa */
+.search-container {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+#search-input {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+/* Tabela de Candidaturas */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table thead th {
+    background-color: #2c3e50;
+    color: white;
+    padding: 10px;
+    text-align: left;
+    font-weight: bold;
+}
+
+table tbody td {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tbody tr:hover {
+    background-color: #f0f3f5;
+}
+
+.table-actions {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* Botões de Ação */
+.crud-icons i {
+    cursor: pointer;
+    margin-right: 10px;
+    font-size: 18px;
+    padding: 8px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.crud-icons i:hover {
+    background-color: #ddd;
+}
+
+.fa-edit {
+    color: #3498db;
+}
+
+.fa-trash {
+    color: #e74c3c;
+}
+
+form button {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+form button:hover {
+    background-color: #c0392b;
+}
+
+/* Modal de Edição */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    text-align: left;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.modal-content h3 {
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+.modal-content form {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-content form .form-group {
+    margin-bottom: 15px;
+}
+
+.modal-content form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.modal-content form input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    font-size: 14px;
+}
+
+.modal-content form button {
+    margin-top: 10px;
+}
+
+/* Botão Fechar Modal */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #e74c3c;
+}
+
+.close:hover {
+    color: #c0392b;
+}
+
+/* Botão Salvar dentro do Modal */
+.modal-content form .btn-primary {
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.modal-content form .btn-primary:hover {
+    background-color: #2ecc71;
+}
+
+/* Botão Cancelar */
+.modal-content form .btn-secondary {
+    background-color: #95a5a6;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.modal-content form .btn-secondary:hover {
+    background-color: #7f8c8d;
+}
+
+/* Estilização do botão de logout */
+form button[type="submit"] {
+    background-color: #dc3545;  /* Cor vermelha para destaque */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 20px; /* Espaçamento entre o botão e o próximo elemento */
+}
+
+form button[type="submit"]:hover {
+    background-color: #c82333; /* Tom mais escuro no hover */
+}
+
+
+/* Responsividade */
+@media (max-width: 768px) {
+    table thead {
+        display: none;
+    }
+
+    table, table tbody, table tr, table td {
+        display: block;
+        width: 100%;
+    }
+
+    table tbody tr {
+        margin-bottom: 20px;
+        border-bottom: 1px solid #ccc;
+    }
+
+    table tbody td {
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+    }
+
+    table tbody td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 50%;
+        padding-left: 15px;
+        font-weight: bold;
+        text-align: left;
+    }
+
+    .table-actions {
+        justify-content: flex-end;
+    }
+}

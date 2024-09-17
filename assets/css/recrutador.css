@@ -1,0 +1,369 @@
+/* Estilos gerais */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #222222;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Container principal */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2, h3 {
+    text-align: center;
+    color: #333;
+}
+
+/* Estilo dos grupos de formulários */
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    font-size: 16px;
+    color: #333;
+}
+
+input[type="text"], textarea {
+    width: 100%; /* Alterado para 100% para melhorar a responsividade */
+    padding: 10px;
+    margin-top: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+/* Botão de envio */
+.btn {
+    padding: 10px;
+    background-color: #0068B2;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+}
+
+.btn:hover {
+    background-color: #044181;
+}
+
+/* Estilo da tabela de vagas */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th, table td {
+    border: 1px solid #ccc;
+    padding: 12px;
+    text-align: left;
+}
+
+table th {
+    background-color: #f2f2f2;
+}
+
+/* Ícones de edição e exclusão */
+.crud-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.crud-icons i {
+    cursor: pointer;
+    font-size: 18px; /* Aumentando o tamanho dos ícones */
+}
+
+.edit-btn {
+    color: #ffc107;
+}
+
+.delete-btn {
+    color: #dc3545;
+}
+
+.table-actions {
+    display: flex;
+    justify-content: center;
+}
+
+/* Estilo para formulários em linha */
+.form-inline {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.form-inline input,
+.form-inline textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Botão padrão */
+.btn {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* Formulário de criação de vaga oculto inicialmente */
+#form-create-vaga {
+    display: none;
+}
+
+/* Modal para edição de vaga */
+.modal {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 50%;
+    max-width: 600px;
+}
+
+/* Estilo para o botão fechar no modal */
+.close {
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: red;
+}
+
+/* Estilo para o header */
+header {
+    background-color: #222222;
+    padding: 10px 20px; /* Reduzindo o padding para aproximar logo e link */
+    display: flex;
+    justify-content: flex-start; /* Alinhando os itens à esquerda */
+    align-items: center; /* Centraliza verticalmente */
+    color: white;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between; /* Espaço flexível entre logo e link */
+    align-items: center; /* Centraliza os itens na vertical */
+    width: 100%;
+}
+
+.logo img {
+    height: 80px; /* Ajuste o tamanho da logo conforme necessário */
+    margin-right: 15px; /* Diminui a distância entre a logo e o link */
+}
+
+.header-nav {
+    display: flex;
+    align-items: center;
+}
+
+.header-link {
+    width: 100%;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+}
+
+.header-link:hover {
+    background-color: #0056b3;
+
+}
+
+/* Modal container */
+.modal {
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo escurecido */
+}
+
+/* Modal content */
+.modal-content {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    width: 500px; /* Ajuste conforme o tamanho desejado */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Formatação dos inputs */
+.modal-content input[type="text"],
+.modal-content textarea {
+    width: 100%; /* Inputs ocupando toda a largura */
+    padding: 10px;
+    margin: 10px 0 20px 0; /* Ajuste de espaçamento */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* Botão de atualizar */
+.modal-content button {
+    width: 100%;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.modal-content button:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos para o footer */
+#footer {
+    background-color: #222;
+    padding: 40px 0;
+    color: white;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-icons ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.footer-icons ul li {
+    display: inline-block;
+}
+
+.footer-icons ul li a {
+    color: white;
+    font-size: 24px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-icons ul li a:hover {
+    color: #0068B2; /* Cor de destaque ao passar o mouse */
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: #444;
+    margin: 20px 0;
+}
+
+.copyright {
+    margin-top: 10px;
+}
+
+.cf-logo {
+    height: 60px; /* Ajuste o tamanho conforme necessário */
+    vertical-align: middle;
+}
+
+.copyright p {
+    margin: 0;
+    font-size: 16px;
+    color: #aaa;
+}
+
+.copyright a {
+    text-decoration: none;
+}
+
+/* Estilização do botão de logout */
+form button[type="submit"] {
+    background-color: #dc3545;  /* Cor vermelha para destaque */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 20px; /* Espaçamento entre o botão e o próximo elemento */
+    margin-top: 10px;
+}
+
+form button[type="submit"]:hover {
+    background-color: #c82333; /* Tom mais escuro no hover */
+}
+
+.salvar{
+    background-color: rgb(15, 179, 15);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    table th, table td {
+        padding: 8px;
+    }
+
+    .modal-content {
+        width: 90%;
+    }
+}

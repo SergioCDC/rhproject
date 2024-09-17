@@ -1,0 +1,97 @@
+/* Estilo base para login e cadastro */
+body {
+    background-color: #222222;
+    font-family: 'Arial', sans-serif;
+}
+
+.login-container, .register-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-box, .register-box {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+
+.register-box {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px; /* Aumente a largura máxima aqui */
+    width: 100%; /* O container vai ocupar 100% da largura disponível, limitado pelo max-width */
+    text-align: center;
+}
+
+
+.login-box h2, .register-box h2 {
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.form-control {
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.btn {
+    background-color: #0068B2;
+    border: none;
+    width: 100%;
+    padding: 10px;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #044181;
+    color: #fff;
+}
+
+.mt-3 {
+    margin-top: 1rem;
+}
+
+a {
+    color: #0068B2;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.cadastro:hover{
+    color: #044181;
+ 
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group select {
+    width: 100%; /* O select vai ocupar toda a largura disponível */
+    padding: 8px; /* Para garantir que o texto dentro não fique cortado */
+    box-sizing: border-box; /* Para que padding e border sejam incluídos na largura total */
+}
+
+

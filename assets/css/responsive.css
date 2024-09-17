@@ -1,0 +1,544 @@
+@media (min-width: 992px) and (max-width: 1280px) {
+    a.logos img {
+        width: 80%;
+        margin-left: 15px;
+    }
+    .button-holder {
+        width: 90%;
+    }
+    .client_feedback {
+        height: auto;
+        width: 65%;
+        padding: 35px 40px;
+        margin-left: 0%;
+    }
+    .address {
+        margin-top: 2.5%;
+    }
+    .slider-area .owl-dot {
+        margin: -50px 2px;
+    }
+    .overlay1 {
+        width: 87.5%;
+    }
+    .navbar ul {
+        margin-right: 0px;
+    }
+}
+@media (min-width: 992px) and (max-width:1199px){
+    .portfolio_img img {
+        width: 280px;
+    }
+    .navbar ul {
+        margin-right: 0px;
+    }
+    .slider-info p{
+        padding: 0px 0px;
+    }
+    .shape2::after{
+        left: 46%;
+    }
+    .shape2::before{
+        left: 40%;
+    }
+    .price-head h2.shape2::before {
+       left: 43.4%;
+    }
+    .price-head h2.shape2::after {
+       left: 48%;
+    }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+    a.logos img {
+        width: 75%;
+        margin-left: 15px;
+    }
+    .navbar-default .navbar-nav > li > a {
+        padding: 15px 5px;
+    }
+    .slider-info p {
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+    .slider-info p{
+        padding: 0px 0px;
+    }
+    .slider-wraper .owl-nav div {
+        height: 35px;
+        width: 35px;
+        font-size: 25px;
+        line-height: 45px;
+    }
+    .button-holder {
+        width: 90%;
+    }
+    .button-holder a {
+        padding: 10px 20px;
+        font-size: 15px;
+    }
+    .shape2::after{
+        left: 45%;
+    }
+    .shape2::before{
+        left: 37%;
+    }
+    .price-head h2.shape2::before {
+       left: 42.4%;
+    }
+    .price-head h2.shape2::after {
+       left: 48%;
+    }
+    .about-skill .paragraph {
+        margin-bottom: 20px;
+    }
+    .progress {
+        margin-bottom: 10px;
+    }
+    .price-head {
+        margin-bottom: 40px;
+    }
+    .event-priceing .plan-details li {
+        font-size: 15px;
+        cursor: pointer;
+    }
+    .slider-area .owl-dot {
+        margin: -50px 2px;
+    }
+    .event-priceing .plan-details .register-now-btn {
+        padding: 12px 25px;
+        font-size: 15px;
+    }
+    #team {
+        padding: 80px 0 0;
+    }
+    .team-slick {
+        margin-bottom: 0px !important;
+    }
+    .overlay1 {
+        width: 84%;
+    }
+    .filter-container {
+        margin: 25px 0;
+    }
+    .portfolio_fillter ul.filter > li {
+        font-size: 15px;
+        line-height: 40px;
+    }
+    div#project_mix {
+        text-align: center;
+    } 
+    #testimonial {
+        height: auto;
+        margin-top: 75px;
+        padding-bottom: 40px;
+    }
+    
+    .testimonial_item h2 {
+        font-size: 20px;
+    }
+    .client_feedback {
+        height: unset;
+        width: 90%;
+        margin-top: 30px;
+        margin-left: 20px;
+    }
+    .testimonial_item p {
+        padding-bottom: 20px;
+        padding-right: 0px;
+    }
+    .blog {
+        padding-top: 40px;
+    }
+    .single-blog {
+        margin-bottom: 40px;
+    }
+    .form {
+        padding: 50px 10px 90px 10px;
+    }
+    .address {
+        margin-top: 3%;
+    }
+    .portfolio_img img {
+        width: 328px;
+    }
+    
+    .service-area .container {
+        width: 700px; 
+        padding-left: 0px;
+    }
+    .navbar ul {
+        margin-right: 0px;
+    }
+    #counter .counter_banner .bnr_overly .counter_text h4{
+        padding: 0;
+    }
+    .counter_text{
+        margin-bottom: 25px;
+    }
+}
+@media (min-width: 768px) and (max-width: 800px) {
+    .col-xs-6 {
+        width: 33%;
+        margin-bottom: 20px;
+    }
+    .slider-info p{
+        padding: 0px 0px;
+    }
+    .portfolio_img img {
+        width: 178px;
+    }
+    #team {
+        padding: 80px 0px !important;
+    }
+    .team_img {
+        padding-left: 30px ;
+        padding-right: 30px ;
+    }
+}
+@media (max-width: 767px) {
+    h3 {
+        font-size: 38px !important;
+    }
+    .title-text {
+        font-size: 26px;
+        margin-bottom: 22px;
+    }
+    p {
+        font-size: 13px !important;
+    }
+    a.logos img {
+        margin-left: 15px;
+    }
+    a.logos img {
+        width: 75%;
+    }
+    .navbar-default .navbar-nav > li > a  {
+        padding: 10px 15px;
+    }
+    .slider-info p {
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+    .slider-info p{
+        padding: 0px 0px;
+    }
+    .slider-wraper .owl-nav div {
+        height: 30px;
+        width: 30px;
+        font-size: 20px;
+        line-height: 42px;
+    }
+    .slider-area .owl-dot {
+
+        margin: -30px 2px;
+    }
+    .button-holder {
+        width: 80%;
+    }
+    .button-holder a {
+        padding: 8px 10px;
+        font-size: 13px;
+    }
+    .shape2::after{
+        left: 47%;
+        top: 120%;
+    }
+    .shape2::before{
+        left: 41%;
+        top: 127.5%;
+    }
+    .price-head h2.shape2::before {
+        left: 41.4%;
+        top: 128%;
+    }
+    .Progress-dark-text h3 {
+        font-size: 15px !important;
+    }
+    .Progress-text h3 {
+        font-size: 15px !important;
+    }
+    .event-priceing .best-offer p {
+        font-size: 25px !important;
+    }
+    .price-bg {
+        padding: 80px 0;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    .event-priceing .plan-price sup {
+        font-size: 30px;
+        margin-right: 10px;
+    }
+    
+    sup {
+        top: 0;
+    }
+    .event-priceing .plan-name h6:first-child,
+    .event-priceing .plan-name h6:last-child {
+        padding-top: 0px;
+    }
+    .event-priceing .plan-name h6 {
+        font-size: 22px;
+    }
+    .event-priceing {
+        margin-bottom: 15px;
+    }
+    .event-priceing .plan-details ul {
+        margin: 0 20% 45px 40%;
+        max-width: 200px;
+    }
+    .event-priceing .plan-details li {
+        font-size: 15px;
+    }
+    .event-priceing .plan-details .register-now-btn {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+    .event-priceing {
+        border-right: unset;
+        border-bottom: 2px solid #ffffff;
+        width: 94%;
+        margin: auto;
+    }
+    .event-priceing .inner-pricing .plan-price p {
+
+        font-size: 35px !important;
+    }
+    .best-offer{
+        margin-top: 20px;
+    }
+    .team-slick {
+        margin-top: 30px;
+    }
+    .filter-container {
+        margin: 15px 0;
+    }
+    .portfolio_fillter ul.filter > li {
+        font-size: 15px;
+        line-height: 40px;
+    }
+    div#project_mix {
+        text-align: center;
+    }
+    #testimonial {
+        height: auto;
+        padding-bottom: 30px;
+    }
+    .testimonial_item h2 {
+        font-size: 20px;
+    }
+    .client_feedback {
+        height: unset;
+        width: 90%;
+        margin-top: 30px;
+        margin-left: 20px;
+    }
+    .testimonial_item p {
+        padding-bottom: 20px;
+        padding-right: 0px;
+    }
+    .blog {
+        padding-top: 50px;
+    }
+    .single-blog {
+        margin-bottom: 30px;
+    }
+    .cont-group {
+        margin-bottom: 50px;
+    }
+    .footer_part {
+        margin-top: -20%;
+        padding-top: 0%;
+    }
+    .about-image img {
+        margin: 8% auto 0;
+    }
+    .single-service-part i {
+        font-size: 55px;
+        padding-left: 46%;
+        color: #1ABC9C;
+    }
+    .overlay1 {
+        position: absolute;
+        background: rgba(0, 0, 0, 0.7);
+        width: 91.5%;
+        height: 75px;
+        transition: .5s ease;
+        margin-top: -41%;
+        opacity: 0;
+        bottom: 0;
+    }
+    .cont-inline .cont-group textarea {
+        margin-top: -6%;
+    }
+    .top-head{
+        width: 50%;
+        float: left;
+        overflow: hidden;
+        font-size: 10px;
+        padding-right: 0px;
+    }
+    ul.social li a i.fa {
+        height: 20px;
+        width: 20px;
+        line-height: 20px;
+        margin-right: 2px;
+    }
+    ul.top-bar-text li {
+        margin-right: 2px;
+    }
+    ul.social, ul.social li {
+        font-size: 10px;
+    }
+    .service-area{
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    .single-service-part {
+        padding: 30px;
+        width: 100%;
+        margin: auto;
+        float: none;
+    }
+    .single-service-part i {
+        font-size: 48px;
+    }
+    .single-service-part h3 {
+        font-size: 12px !important;
+    }
+    .single-service-part p {
+        
+        text-align: center;
+    }
+    .portfolio_img img {
+        width: 700px;
+        height: 450px;
+        align-items: center!important;
+    }
+    .navbar-toggle {
+        margin-right: 30px;
+    }
+    .about-image img {
+        margin: auto;
+        width: 100%;
+    }
+    .about , .skills , .services-cont {
+        width: 98%;
+        margin: auto;
+    }
+    .col-xs-6 {
+        width: 100%;
+        margin-bottom: 35px;
+    }
+    .dropmenu:hover .dropdown-content {
+        display: block !important;
+        background: #0068B2; 
+        width: 100%;
+        position: relative;
+        left: 20px;
+        right: 19px;
+        width: 8px;
+        height: 2px;
+        display: block;
+        content: '';
+    }
+    .dropmenu:hover .dropdown-content li a {
+        color: #fff;
+        background: #0068B2; 
+    }
+}
+@media (max-width: 600px){
+    .service-area .container , .event-priceing {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    .slider-info p{
+        padding: 0px 0px;
+    }
+    .shape2::after{
+        left: 46%;
+        top: 120%;
+    }
+    .shape2::before{
+        left: 39%;
+        top: 127.5%;
+    }
+    .price-head h2.shape2::before {
+       left: 39.4%;
+       top: 128%;
+    }   
+}
+@media (max-width: 450px){
+    .fill-row button{
+        display: block;
+    }
+    .fill-row em{
+        float: left;
+    }
+}
+@media (max-width: 450px){
+    .overlay_shape i{
+        margin-left: 0%;
+        margin-top: 55%;
+        margin-bottom: -25%;
+    }
+    .slider-info p{
+        padding: 0px 0px;
+    }
+    .shape2::after{
+        left: 45%;
+        top: 120%;
+    }
+    .shape2::before{
+        left: 35%;
+        top: 127.5%;
+    }
+    .price-head h2.shape2::before {
+        left: 35.4%;
+        top: 128%;
+    }
+}
+@media (min-width:320px) and (max-width: 468px){
+    .portfolio_img img {
+        width: 398px;
+    }
+    .blog_comments .media .media-left {
+        padding-right: 0px;
+    }
+    .blog_media .media-heading {
+        font-size: 14px !important;
+    }
+    .slider-info p{
+        padding: 0px 0px;
+    }
+}
+@media (min-width:332px) and (max-width: 391px){
+	.top-head {
+		width: 55% !important;
+	}
+	ul.top-bar-text li i.fa {
+		margin-right: 3px;
+	}
+	ul.top-bar-text {
+		margin-top: 0px;
+	}
+	ul.social li a i.fa {
+		height: 15px;
+		width: 15px;
+		line-height: 15px;
+	}
+}
+
+@media (max-width: 331px){
+	.top-head {
+		width: 44%;
+	}
+}
+
+
+
+
+
+
+
+

@@ -1,0 +1,104 @@
+/* Estilos para o título com o sublinhado azul */
+.title-text {
+    position: relative;
+    font-size: 2em;
+    color: #ffffff; /* Cor branca para o texto */
+    text-transform: uppercase;
+}
+
+.title-text::after {
+    content: '';
+    display: block;
+    width: 50px; /* Tamanho do sublinhado */
+    height: 4px; /* Espessura do sublinhado */
+    background-color: #007bff; /* Cor azul */
+    margin: 10px auto 0; /* Centraliza o sublinhado e ajusta o espaçamento */
+}
+
+/* Estilos para a seção de vagas */
+.vagas-section {
+    padding: 50px 0;
+    background-color: #222222; /* Cor de fundo escura */
+}
+
+.vaga-item {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 15px;
+}
+
+.vaga-title {
+    cursor: pointer;
+    font-size: 1.5em;
+    color: #ffffff; /* Texto branco */
+    margin: 0;
+}
+
+.vaga-title:hover {
+    color: #007bff; /* Cor de destaque azul ao passar o mouse */
+}
+
+.vaga-description {
+    margin-top: 10px;
+    font-size: 1.1em;
+    color: #cccccc; /* Texto cinza claro */
+}
+
+/* Estilos para o modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 5px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+}
+
+.modal-content h2 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}

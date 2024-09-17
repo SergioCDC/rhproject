@@ -1,0 +1,225 @@
+body{
+    min-height: 100vh; /* Garante que o corpo da página preencha a altura da janela */
+    background-color: #222222;
+}
+
+/* Ajustar o texto da tabela */
+table tbody td {
+    color: #ffffff; /* Aumenta a visibilidade do texto */
+    padding: 15px; /* Adiciona um espaçamento interno */
+}
+
+/* Melhorar o estilo do cabeçalho da tabela */
+table thead th {
+    color: #ffffff; /* Torna o texto branco para melhor contraste */
+    background-color: #333333; /* Fundo escuro para contraste com o texto */
+    padding: 15px;
+}
+
+/* Estilização do botão */
+button.btn-primary {
+    background-color: #007bff;
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px; /* Bordas arredondadas */
+}
+
+button.btn-primary:hover {
+    background-color: #0056b3; /* Efeito hover para o botão */
+}
+
+/* Melhorar a aparência geral da tabela */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 18px;
+    text-align: left;
+}
+
+table th, table td {
+    padding: 12px 15px;
+}
+
+table tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+table tr:nth-of-type(even) {
+    background-color: #333333;
+}
+
+table tr:last-of-type {
+    border-bottom: 2px solid #007bff;
+}
+
+
+/* Estilos para o título com o sublinhado azul */
+.title-text {
+    position: relative;
+    font-size: 2em;
+    color: #ffffff; /* Cor branca para o texto */
+    text-transform: uppercase;
+}
+
+.title-text::after {
+    content: '';
+    display: block;
+    width: 50px; /* Tamanho do sublinhado */
+    height: 4px; /* Espessura do sublinhado */
+    background-color: #007bff; /* Cor azul */
+    margin: 10px auto 0; /* Centraliza o sublinhado e ajusta o espaçamento */
+}
+
+/* Estilos para a seção de vagas */
+.vagas-section {
+    padding: 50px 0;
+    background-color: #222222; /* Cor de fundo escura */
+}
+
+.vaga-item {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 15px;
+}
+
+.vaga-title {
+    cursor: pointer;
+    font-size: 1.5em;
+    color: #ffffff; /* Texto branco */
+    margin: 0;
+}
+
+.vaga-title:hover {
+    color: #007bff; /* Cor de destaque azul ao passar o mouse */
+}
+
+.vaga-description {
+    margin-top: 10px;
+    font-size: 1.1em;
+    color: #cccccc; /* Texto cinza claro */
+}
+
+/* Estilos para o modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 5px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+}
+
+.modal-content h2 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.button-inscrever{
+    background-color: #007bff;
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px; /* Bordas arredondadas */
+}
+
+.button-inscrever:hover {
+    background-color: #0056b3; /* Efeito hover para o botão */
+}
+
+.button-inscrito {
+    background-color: #28a745 !important; /* Verde */
+    color: white;
+    cursor: default; /* Remove o cursor de pointer */
+}
+
+.button-inscrito::before {
+    content: '✓ '; /* Adiciona o checkmark antes do texto */
+}
+
+/* Garantir que o link Login e o botão Logout estejam alinhados */
+.navbar-nav li {
+    display: inline-block;  /* Faz com que os itens do menu fiquem na mesma linha */
+    margin-right: 20px;     /* Ajusta o espaçamento entre os itens do menu */
+    vertical-align: middle; /* Garante o alinhamento vertical no meio */
+}
+
+.header-menu form {
+    display: inline-block;   /* Garante que o formulário esteja alinhado na mesma linha */
+    margin: 0;               /* Remove margens indesejadas */
+}
+
+.btn-logout {
+    background: none !important;      /* Remove o fundo do botão */
+    border: none;          /* Remove a borda do botão */
+    color: #fff;         /* Cor do texto */
+    padding: 0;            /* Remove o preenchimento */
+    font-size: 16px;       /* Tamanho da fonte */
+    cursor: pointer;       /* Mostra o ponteiro como se fosse um link */
+    text-decoration: none; /* Remove o sublinhado */
+    vertical-align: middle; /* Garante alinhamento vertical */
+    margin-top: 20px;
+}
+
+.btn-logout:hover {
+    color: #0056b3;        /* Cor ao passar o mouse */
+}
+
+
