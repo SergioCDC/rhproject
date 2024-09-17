@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Pesquisa de Candidaturas">
+    <meta name="author" content="CF Contabilidade">
+    <title>Pesquisa de Candidaturas</title>
+
+    <!-- Font Awesome para ícones (caso você use ícones na página) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Link para o arquivo CSS já existente -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/candidatuas.css">
+        <!-- Favicon -->
+        <link rel="shortcut icon" type="image/png" href="assets/images/favicon.png">
+        <!-- font-awesome.min - css -->
+        <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
+
+</head>
+<body>
+
+
+    <div class="container">
+        <h2>Pesquisa de Candidaturas</h2>
+
+        <!-- Campo de Pesquisa para Candidaturas -->
+        <div class="search-container">
+            <input type="text" id="search-input" class="form-control" placeholder="Pesquisar por nome ou vaga...">
+        </div>
+
+        <a href="/recrutador" class="header-link">Vagas</a>
+
+        <hr>
+
+        <!-- Lista de Candidaturas -->
+        <h3>Candidaturas Registradas</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome do Candidato</th>
+                    <th>Email</th>
+                    <th>CPF</th>
+                    <th>Curso</th>
+                    <th>Vaga</th>
+                    <th>Data da Candidatura</th>
+                </tr>
+            </thead>
+            <tbody id="candidaturas-body">
+                {% for candidatura in candidaturas %}
+                <tr>
+                    <td class="nome-candidato">{{ candidatura.nome_candidato }}</td>
+                    <td>{{ candidatura.email_candidato }}</td>
+                    <td>{{ candidatura.cpf }}</td>
+                    <td>{{ candidatura.curso }}</td>
+                    <td class="titulo-vaga">{{ candidatura.titulo_vaga }}</td>
+                    <td>{{ candidatura.data_candidatura }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Estrutura do Footer -->
+    <footer id="footer">
+        <div class="footer-content">
+            <div class="footer-icons">
+                <ul>
+                    <li><a href="https://www.facebook.com/CFcontabilidade/" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="https://www.youtube.com/c/CFContabilidade" target="_blank"><i class="fa fa-youtube"></i></a></li>
+                    <li><a href="https://www.instagram.com" target="_blank"><i class="fa fa-instagram"></i></a></li>
+                    <li><a href="https://br.linkedin.com/company/cf-contabilidade" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                </ul>
+            </div>
+            
+            <hr>
+
+            <div class="copyright">
+                <p>&copy; 2024 by <a href="#"><img src="assets/images/logo-branca.png" class="cf-logo" alt="CF Contabilidade Logo"></a></p>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- JavaScript para pesquisa -->
+    <script>
+        // Filtragem de pesquisa por nome ou vaga
+        document.getElementById('search-input').addEventListener('input', function() {
+            var input = this.value.toLowerCase();
+            var rows = document.querySelectorAll('#candidaturas-body tr');
+
+            rows.forEach(function(row) {
+                var nomeCandidato = row.querySelector('.nome-candidato').innerText.toLowerCase();
+                var tituloVaga = row.querySelector('.titulo-vaga').innerText.toLowerCase();
+                
+                // Verifica se o texto digitado corresponde ao nome do candidato ou ao título da vaga
+                if (nomeCandidato.includes(input) || tituloVaga.includes(input)) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

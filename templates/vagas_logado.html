@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vagas</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/png" href="assets/images/favicon.png">
+    <!-- CSS necessário -->
+    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/slick.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/jquery.fancybox.min.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
+    <!-- <link rel="stylesheet" type="text/css" href="assets/css/vagas.css"> -->
+    <link rel="stylesheet" type="text/css" href="assets/css/vagas_logado.css">
+</head>
+
+<body>
+
+    <!-- Header (copiado do index.html) -->
+    <div class="header-menu">
+        <div class="container">
+            <div class="row">
+                <nav class="navbar navbar-default">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand logos" href="#top"><img src="assets/images/logo-branca.png" class="img-responsive" alt="logo"></a>
+                    </div>
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav navbar-right">
+                                <!-- Botão de Logout -->
+                            <form action="{{ url_for('logout') }}" method="get">
+                                <button type="submit" class="btn-logout">Logout</button>
+                            </form>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <!-- Seção de Vagas -->
+    <section id="vagas" class="vagas-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h3>Bem-vindo(a) {{ session['usuario'] }}!</h3>    
+                    <h2 class="title-text shape2 text-center title-dark">Vagas <span>Disponíveis</span></h2>
+                    <div id="vagas-list">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Título</th>
+                                    <th>Descrição</th>
+                                    <th>Requisitos</th>
+                                    <th>Inscrição</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Loop para exibir vagas cadastradas -->
+                                {% for vaga in vagas %}
+                                <tr>
+                                    <td>{{ vaga.titulo }}</td>
+                                    <td>{{ vaga.descricao }}</td>
+                                    <td>{{ vaga.requisitos }}</td>
+                                    <td class="table-actions">
+                                        <div class="crud-icons">
+                                            <!-- Botão Quero Me Inscrever -->
+                                            <button class="button-inscrever" onclick="inscreverVaga('{{ vaga.id }}')">Quero me inscrever</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formulário Modal -->
+    <div id="inscricaoModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close" onclick="closeForm()">&times;</span>
+            <h2>Formulário de Inscrição</h2>
+            <form id="form-inscricao" method="POST" action="/inscricao" enctype="multipart/form-data">
+
+
+                <!-- Vaga de Interesse -->
+                <div class="form-group">
+                    <label for="vaga">Vaga de Interesse:</label>
+                    <select id="vaga" class="form-control" name="vaga" required>
+                        <option value="">Selecione a vaga</option>
+                        {% for vaga in vagas %}
+                        <option value="{{ vaga.id }}">{{ vaga.titulo }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <!-- Botão de Enviar -->
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
+        </div>
+    </div>
+
+    <!--
+        ==============================
+        footer Area Start
+        ==============================
+    -->
+    <!-- Estrutura do Footer -->
+    <footer id="footer">
+        <div class="footer-icons">
+            <ul>
+                <li><a href="https://www.facebook.com/CFcontabilidade/" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="https://www.youtube.com/c/CFContabilidade" target="_blank"><i class="fa fa-youtube"></i></a></li>
+                <li><a href="https://www.instagram.com" target="_blank"><i class="fa fa-instagram"></i></a></li>
+                <li><a href="https://br.linkedin.com/company/cf-contabilidade" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+            </ul>
+        </div>
+        
+        <hr>
+
+        <div class="copyright">
+            &copy; 2024 by <a><img src="assets/images/logo-branca.png" class="cf-logo"></a>
+        </div>
+
+    </footer>
+
+    <!--
+        ==============================
+        footer Area End
+        ==============================
+    -->
+
+    <!-- Scripts necessários -->
+    <script src="assets/js/jquery-1.12.4.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/SmoothScroll.js"></script>
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <script src="assets/js/jquery.mb.YTPlayer.min.js"></script>
+    <script src="assets/js/jquery.fancybox.min.js"></script>
+    <script src="assets/js/slick.min.js"></script>
+    <script src="assets/js/counter.js"></script>
+    <script src="assets/js/waypoints.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <!-- Script para manipular o modal -->
+    <script>
+        function inscreverVaga(vagaId) {
+            const button = event.target; // Captura o botão que foi clicado
+
+            // Alterar imediatamente o estado do botão
+            button.classList.remove('button-inscrever');
+            button.classList.add('button-inscrito');
+            button.textContent = 'Inscrito';
+            button.disabled = true; // Desativa o botão para impedir múltiplas inscrições
+
+            // Realizar o fetch para inscrição
+            fetch('/inscricao/' + vagaId, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({})
+            })
+            .then(response => {
+                if (!response.ok) {
+                    // Em caso de erro, exibe alerta e reverte o estado do botão
+                    alert('Erro ao realizar inscrição.');
+                    button.classList.remove('button-inscrito');
+                    button.classList.add('button-inscrever');
+                    button.textContent = 'Quero me inscrever';
+                    button.disabled = false; // Reativa o botão caso haja erro
+                }
+            })
+            .catch(error => {
+                console.error('Erro:', error);
+                alert('Erro ao realizar inscrição.');
+                
+                // Reverter o estado do botão em caso de erro
+                button.classList.remove('button-inscrito');
+                button.classList.add('button-inscrever');
+                button.textContent = 'Quero me inscrever';
+                button.disabled = false; // Reativa o botão caso haja erro
+            });
+        }
+
+    </script>
+
+</body>
+
+</html>

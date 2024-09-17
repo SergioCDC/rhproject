@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Administração de Candidaturas">
+    <meta name="author" content="CF Contabilidade">
+    <title>Admin</title>
+
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/admin.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <h2>Painel de Controle</h2>
+        <h3>Bem-vindo(a) {{ session['usuario'] }}!</h3>    
+        <!-- Botão de Logout -->
+        <form action="{{ url_for('logout') }}" method="get">
+            <button type="submit">Logout</button>
+        </form> 
+
+        <!-- Campo de Pesquisa -->
+        <div class="search-container">
+            <input type="text" id="search-input" class="form-control" placeholder="Pesquisar por nome ou vaga...">
+        </div>
+
+        <!-- Lista de Candidaturas em Tabela -->
+        <div id="candidaturas-list">      
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome do Candidato</th>
+                        <th>Email</th>
+                        <th>CPF</th>
+                        <th>Curso</th>
+                        <th>Vaga</th>
+                        <th>Data da Candidatura</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="candidaturas-body">
+                    {% for candidatura in candidaturas %}
+                    <tr>
+                        <td class="nome-candidato">{{ candidatura.nome_candidato }}</td>
+                        <td>{{ candidatura.email_candidato }}</td>
+                        <td>{{ candidatura.cpf }}</td>
+                        <td>{{ candidatura.curso }}</td>
+                        <td class="titulo-vaga">{{ candidatura.titulo_vaga }}</td>
+                        <td>{{ candidatura.data_candidatura }}</td>
+                        <td class="table-actions">
+                            <div class="crud-icons">
+                                <!-- Botão Editar -->
+                                <i class="fas fa-edit edit-btn" 
+                                   onclick="showEditForm('{{ candidatura.id }}', 
+                                                        '{{ candidatura.candidato_id }}',
+                                                        '{{ candidatura.nome_candidato }}', 
+                                                        '{{ candidatura.email_candidato }}', 
+                                                        '{{ candidatura.cpf }}', 
+                                                        '{{ candidatura.curso }}', 
+                                                        '{{ candidatura.titulo_vaga }}')">
+                                </i>
+
+                                <!-- Botão Deletar -->
+                                <form method="POST" style="display:inline;">
+                                    <input type="hidden" name="id" value="{{ candidatura.id }}">
+                                    <button type="submit" name="deletar" style="background:none; border:none; padding:0;">
+                                        <i class="fas fa-trash delete-btn"></i>
+                                    </button>
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Modal de Edição de Candidatura -->
+        <div id="modal-edit-candidatura" class="modal">
+            <div class="modal-content">
+                <!-- Botão de fechar com "X" -->
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h3>Editar Candidatura</h3>
+                <form method="POST" action="/admin/candidaturas">
+                    <input type="hidden" id="edit-id" name="id"> <!-- ID da candidatura -->
+                    <input type="hidden" id="edit-candidato-id" name="candidato_id"> <!-- ID do candidato -->
+                
+                    <div class="form-group">
+                        <label for="edit-nome">Nome do Candidato:</label>
+                        <input type="text" id="edit-nome" name="nome" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-email">Email:</label>
+                        <input type="email" id="edit-email" name="email" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-cpf">CPF:</label>
+                        <input type="text" id="edit-cpf" name="cpf" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-curso">Curso:</label>
+                        <input type="text" id="edit-curso" name="curso" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-vaga">Vaga:</label>
+                        <input type="text" id="edit-vaga" name="vaga" class="form-control" readonly>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" name="editar" class="btn btn-primary">Atualizar Candidatura</button>
+                    </div>
+                </form>
+                
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- JavaScript -->
+    <script>
+        // Filtragem de pesquisa por nome ou vaga
+        document.getElementById('search-input').addEventListener('input', function() {
+            var input = this.value.toLowerCase();
+            var rows = document.querySelectorAll('#candidaturas-body tr');
+
+            rows.forEach(function(row) {
+                var nomeCandidato = row.querySelector('.nome-candidato').innerText.toLowerCase();
+                var tituloVaga = row.querySelector('.titulo-vaga').innerText.toLowerCase();
+                
+                // Verifica se o texto digitado corresponde ao nome do candidato ou ao título da vaga
+                if (nomeCandidato.includes(input) || tituloVaga.includes(input)) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        });
+
+        // Função para exibir o modal de edição e preencher os campos
+        function showEditForm(id, candidato_id, nome, email, cpf, curso, vaga) {
+            var modal = document.getElementById('modal-edit-candidatura');
+            var editId = document.getElementById('edit-id'); // ID da candidatura
+            var editCandidatoId = document.getElementById('edit-candidato-id'); // ID do candidato
+            var editNome = document.getElementById('edit-nome');
+            var editEmail = document.getElementById('edit-email');
+            var editCpf = document.getElementById('edit-cpf');
+            var editCurso = document.getElementById('edit-curso');
+            var editVaga = document.getElementById('edit-vaga'); // Campo de Vaga
+
+            // Preencher os campos com os dados corretos da candidatura
+            editId.value = id;
+            editCandidatoId.value = candidato_id;
+            editNome.value = nome;
+            editEmail.value = email;
+            editCpf.value = cpf;
+            editCurso.value = curso;
+            editVaga.value = vaga;  // Preenche o campo da vaga com o título da vaga
+
+            // Exibir o modal
+            modal.style.display = 'flex';
+        }
+
+        // Função para fechar o modal de edição
+        function closeModal() {
+            var modal = document.getElementById('modal-edit-candidatura');
+            modal.style.display = 'none';
+        }
+    </script>
+</body>
+
+</html>
