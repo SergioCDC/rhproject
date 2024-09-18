@@ -20,16 +20,17 @@
 <body>
     <div class="container">
         <h2>Painel de Controle</h2>
+        <!-- Campo de Pesquisa -->
+        <div class="search-container">
+            <input type="text" id="search-input" class="form-control" placeholder="Pesquisar por nome ou vaga...">
+        </div>
         <h3>Bem-vindo(a) {{ session['usuario'] }}!</h3>    
         <!-- Botão de Logout -->
         <form action="{{ url_for('logout') }}" method="get">
             <button type="submit">Logout</button>
         </form> 
 
-        <!-- Campo de Pesquisa -->
-        <div class="search-container">
-            <input type="text" id="search-input" class="form-control" placeholder="Pesquisar por nome ou vaga...">
-        </div>
+
 
         <!-- Lista de Candidaturas em Tabela -->
         <div id="candidaturas-list">      
