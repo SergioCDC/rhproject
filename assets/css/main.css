@@ -1482,6 +1482,11 @@ ul.filter>li>a:focus {
     color: #f2be02;
 }
 
+.client_img img {
+    width: 350px; /* Aumente este valor conforme necessário */
+    height: auto; /* Mantém a proporção da imagem */
+    border-radius: 15px;
+}
 
 /* ==============================
         BLOG AREA start
@@ -1712,64 +1717,64 @@ ul.filter>li>a:focus {
       FOOTER AREA  START
    =============================== */
 
-        /* Estilos do Footer */
-        #footer {
-            background-color: #222222;
-            padding: 20px 0;
-            text-align: center;
-            color: #ffffff;
-            position: relative;
-        }
+/* Estilos do Footer */
+#footer {
+    background-color: #222222;
+    padding: 20px 0;
+    text-align: center;
+    color: #ffffff;
+    position: relative;
+}
 
-        .footer-icons {
-            margin-bottom: 20px;
-        }
+.footer-icons {
+    margin-bottom: 20px;
+}
 
-        .footer-icons ul {
-            list-style: none;
-            padding: 0;
-        }
+.footer-icons ul {
+    list-style: none;
+    padding: 0;
+}
 
-        .footer-icons ul li {
-            display: inline-block;
-            margin: 0 10px;
-        }
+.footer-icons ul li {
+    display: inline-block;
+    margin: 0 10px;
+}
 
-        .footer-icons ul li a {
-            text-align: center;
-            color: #0068B2;
-            font-size: 20px;
-            width: 50px;
-            height: 50px;
-            line-height: 50px;
-            border-radius: 50%;
-            border: 2px solid #0068B2;
-            display: inline-block;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
+.footer-icons ul li a {
+    text-align: center;
+    color: #0068B2;
+    font-size: 20px;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 50%;
+    border: 2px solid #0068B2;
+    display: inline-block;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
 
-        .footer-icons ul li a:hover {
-            background-color: #0068B2;
-            color: #ffffff;
-            transform: scale(1.1);
-        }
+.footer-icons ul li a:hover {
+    background-color: #0068B2;
+    color: #ffffff;
+    transform: scale(1.1);
+}
 
-        .copyright {
-            font-size: 16px;
-            margin-bottom: 20px;
-        }
+.copyright {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
 
-        .cf-logo{
-            width: 200px;
-        }
+.cf-logo{
+    width: 200px;
+}
 
-        hr {
-            border: none;
-            height: 1px;
-            background-color: #ffffff;
-            margin: 20px 0;
-        }
+hr {
+    border: none;
+    height: 1px;
+    background-color: #ffffff;
+    margin: 20px 0;
+}
 
 
 /* === BACK TO TOP CSS == */
