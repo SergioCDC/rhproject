@@ -367,3 +367,79 @@ form button[type="submit"]:hover {
         width: 90%;
     }
 }
+
+
+@media (max-width: 768px) {
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+
+    thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    tr {
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+    }
+
+    td {
+        border: none;
+        position: relative;
+        padding-left: 50%;
+    }
+
+    td:before {
+        position: absolute;
+        top: 6px;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        content: attr(data-label);
+        font-weight: bold;
+    }
+
+    .crud-icons {
+        display: flex;
+        justify-content: flex-start;
+        margin-top: 10px;
+    }
+
+    .crud-icons i {
+        margin-right: 10px;
+    }
+
+    /* Organização dos botões */
+    .btn-criar-vaga,
+    .search-container,
+    .btn-candidaturas,
+    .btn-logout {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .btn-criar-vaga,
+    .btn-candidaturas,
+    .btn-logout {
+        display: block;
+        text-align: center;
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .search-container input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    /* Ajuste do layout para empilhar os botões */
+    .header-actions {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
