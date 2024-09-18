@@ -102,3 +102,68 @@
 .btn-primary:hover {
     background-color: #0056b3;
 }
+
+/* Estilos para dispositivos móveis */
+@media (max-width: 767px) {
+    .vagas-section table {
+        width: 100%;
+        display: block;
+        overflow-x: auto;
+    }
+
+    .vagas-section table thead {
+        display: none;
+    }
+
+    .vagas-section table tbody tr {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .vagas-section table tbody tr td {
+        display: block;
+        text-align: left; /* Alinha o texto à esquerda */
+        padding-left: 0; /* Remove o padding à esquerda */
+        position: relative;
+    }
+
+    .vagas-section table tbody tr td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 50%;
+        padding-left: 15px;
+        font-weight: bold;
+        text-align: left;
+    }
+}
+
+/* Estilos para tablets */
+@media (min-width: 768px) and (max-width: 991px) {
+    .vagas-section table {
+        width: 100%;
+    }
+
+    .vagas-section table thead th {
+        font-size: 14px;
+    }
+
+    .vagas-section table tbody tr td {
+        font-size: 14px;
+    }
+}
+
+/* Estilos para desktops */
+@media (min-width: 992px) {
+    .vagas-section table {
+        width: 100%;
+    }
+
+    .vagas-section table thead th {
+        font-size: 16px;
+    }
+
+    .vagas-section table tbody tr td {
+        font-size: 16px;
+    }
+}
