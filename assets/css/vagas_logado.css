@@ -2,7 +2,11 @@ body{
     min-height: 100vh; /* Garante que o corpo da página preencha a altura da janela */
     background-color: #222222;
 }
-
+h3{
+    color: #fff;
+    font-size: 25px;
+    margin-bottom: 20px;
+}
 /* Ajustar o texto da tabela */
 table tbody td {
     color: #ffffff; /* Aumenta a visibilidade do texto */
@@ -14,6 +18,47 @@ table thead th {
     color: #ffffff; /* Torna o texto branco para melhor contraste */
     background-color: #333333; /* Fundo escuro para contraste com o texto */
     padding: 15px;
+}
+
+/* Estilos para o footer */
+#footer {
+    background-color: #222;
+    padding: 40px 0;
+    color: white;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-icons ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.footer-icons ul li {
+    display: inline-block;
+}
+
+.footer-icons ul li a {
+    color: white;
+    font-size: 24px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-icons ul li a:hover {
+    color: #0068B2; /* Cor de destaque ao passar o mouse */
 }
 
 /* Estilização do botão */
@@ -222,4 +267,88 @@ table tr:last-of-type {
     color: #0056b3;        /* Cor ao passar o mouse */
 }
 
+
+/* Estilos para dispositivos móveis */
+@media (max-width: 767px) {
+    h3{
+        color: #fff;
+        font-size: 15px;
+    }
+    .vagas-section table {
+        width: 100%;
+        display: block;
+        overflow-x: auto;
+    }
+
+    .vagas-section table thead {
+        display: none;
+    }
+
+    .vagas-section table tbody tr {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .vagas-section table tbody tr td {
+        display: block;
+        text-align: left; /* Alinha o texto à esquerda */
+        padding-left: 0; /* Remove o padding à esquerda */
+        position: relative;
+    }
+
+    .vagas-section table tbody tr td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 50%;
+        padding-left: 15px;
+        font-weight: bold;
+        text-align: left;
+    }
+}
+
+/* Estilos para tablets */
+@media (min-width: 768px) and (max-width: 991px) {
+    h3{
+        color: #fff;
+        font-size: 15px;
+    }
+    .vagas-section table {
+        width: 100%;
+    }
+
+    .vagas-section table thead th {
+        font-size: 14px;
+    }
+
+    .vagas-section table tbody tr td {
+        font-size: 14px;
+    }
+}
+
+/* Estilos para desktops */
+@media (min-width: 992px) {
+    h3{
+        color: #fff;
+        font-size: 15px;
+    }
+    .vagas-section table {
+        width: 100%;
+    }
+
+    .vagas-section table thead th {
+        font-size: 16px;
+    }
+
+    .vagas-section table tbody tr td {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    h3{
+        color: #fff;
+        font-size: 15px;
+    } 
+}
 
