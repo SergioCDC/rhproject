@@ -34,7 +34,7 @@ h2 {
 /* Campo de Pesquisa */
 .search-container {
     margin-bottom: 20px;
-    text-align: left;
+    text-align: center; /* Centraliza o conteúdo */
 }
 
 #search-input {
@@ -49,10 +49,17 @@ h2 {
 }
 
 /* Tabela de Candidaturas */
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+}
+
 table {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 20px;
+    display: block;
+    overflow-x: auto;
 }
 
 table thead th {
@@ -104,18 +111,22 @@ tbody tr:hover {
     color: #e74c3c;
 }
 
-form button {
-    background-color: #e74c3c;
-    color: white;
+/* Estilização do botão de logout */
+form button[type="submit"] {
+    background-color: #dc3545;  /* Cor vermelha para destaque */
     border: none;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
     cursor: pointer;
-    padding: 5px 10px;
-    border-radius: 4px;
-    font-size: 14px;
+    transition: background-color 0.3s ease;
+    margin-bottom: 20px; /* Espaçamento entre o botão e o próximo elemento */
+    margin-top: 10px;
 }
 
-form button:hover {
-    background-color: #c0392b;
+form button[type="submit"]:hover {
+    background-color: #c82333; /* Tom mais escuro no hover */
 }
 
 /* Modal de Edição */
@@ -365,3 +376,4 @@ hr {
         justify-content: flex-end;
     }
 }
+
